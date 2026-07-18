@@ -1,0 +1,52 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "Annual Celebration of St. Mark",
+      "date": "2026-07-25",
+      "category": "Events",
+      "content": "Join us for our annual celebration honoring St. Mark the Evangelist. This year we will have special liturgy, traditional music, and community fellowship.",
+      "image": "https://images.unsplash.com/photo-1470229722913-7f419344ca51?w=600&h=400&fit=crop"
+    },
+    {
+      "id": 2,
+      "title": "Community Outreach Program",
+      "date": "2026-07-18",
+      "category": "Community",
+      "content": "Our church continues its commitment to serving the community through outreach programs, food distribution, and assistance to those in need.",
+      "image": "https://images.unsplash.com/photo-1559027615-cd1628902f4a?w=600&h=400&fit=crop"
+    },
+    {
+      "id": 3,
+      "title": "Youth Group Meeting",
+      "date": "2026-07-15",
+      "category": "Youth",
+      "content": "The youth group will meet this Friday at 6:30 PM for fellowship, games, and spiritual discussion. All young people are welcome to attend.",
+      "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop"
+    },
+    {
+      "id": 4,
+      "title": "New Church Music Initiative",
+      "date": "2026-07-10",
+      "category": "Worship",
+      "content": "We are launching a new initiative to preserve and teach traditional Ethiopian Orthodox church music. Choir practice begins every Thursday at 7:00 PM.",
+      "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop"
+    },
+    {
+      "id": 5,
+      "title": "Prayer and Fasting Observance",
+      "date": "2026-07-08",
+      "category": "Worship",
+      "content": "We observe prayer and fasting days throughout the year following our church calendar. These times help us grow in spiritual discipline and devotion.",
+      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop"
+    },
+    {
+      "id": 6,
+      "title": "Weekly Bible Study Classes",
+      "date": "2026-07-05",
+      "category": "Community",
+      "content": "Bible study classes are held every Wednesday at 7:00 PM. We explore scripture together and discuss its meaning in our daily lives.",
+      "image": "https://images.unsplash.com/photo-1457584220759-0dd4fbf8e44d?w=600&h=400&fit=crop"
+    }
+  ]
+}

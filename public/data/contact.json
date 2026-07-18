@@ -1,0 +1,21 @@
+{
+  "contact": {
+    "name": "St. Mark Ethiopian Orthodox Church",
+    "address": "Kasernenstrasse 12, 97072 Würzburg, Germany",
+    "latitude": 49.7913,
+    "longitude": 9.9534,
+    "phone": "+49 931 123456",
+    "email": "info@stmarkchurch.de",
+    "website": "www.stmarkchurch.de",
+    "hours": {
+      "sunday": "10:00 AM - 1:00 PM (Main Service)",
+      "wednesday": "7:00 PM - 8:30 PM (Prayer Service)",
+      "friday": "6:30 PM - 8:00 PM (Youth Program)"
+    },
+    "social": {
+      "facebook": "https://facebook.com/stmarkchurch",
+      "twitter": "https://twitter.com/stmarkchurch",
+      "youtube": "https://youtube.com/stmarkchurch"
+    }
+  }
+}

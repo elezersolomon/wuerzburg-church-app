@@ -1,0 +1,32 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "title": "Welcome to St. Mark Church",
+      "description": "A place of worship, community, and spiritual growth",
+      "image": "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?w=1200&h=500&fit=crop",
+      "cta": "Join Us Today"
+    },
+    {
+      "id": 2,
+      "title": "Sunday Worship",
+      "description": "Every Sunday at 10:00 AM - All are welcome",
+      "image": "https://images.unsplash.com/photo-1516562141207-8988a262b9f7?w=1200&h=500&fit=crop",
+      "cta": "Learn More"
+    },
+    {
+      "id": 3,
+      "title": "Community Service",
+      "description": "Serving Würzburg with compassion and faith",
+      "image": "https://images.unsplash.com/photo-1516214104703-3ab28dba60ca?w=1200&h=500&fit=crop",
+      "cta": "Get Involved"
+    },
+    {
+      "id": 4,
+      "title": "Upcoming Events",
+      "description": "Check our calendar for all events and gatherings",
+      "image": "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?w=1200&h=500&fit=crop",
+      "cta": "View Events"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "title": "Welcome to St. Mark Church",
+      "description": "A vibrant Ethiopian Orthodox community dedicated to worship, fellowship, and spiritual growth",
+      "image": "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=1200&h=500&fit=crop",
+      "cta": "Join Us Today"
+    },
+    {
+      "id": 2,
+      "title": "Sunday Worship Service",
+      "description": "Join us every Sunday at 10:00 AM for our main worship service. All are welcome.",
+      "image": "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?w=1200&h=500&fit=crop",
+      "cta": "Learn More"
+    },
+    {
+      "id": 3,
+      "title": "Community Fellowship",
+      "description": "We gather together as a family to support one another in faith and love",
+      "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=500&fit=crop",
+      "cta": "Get Involved"
+    },
+    {
+      "id": 4,
+      "title": "Spiritual Growth Programs",
+      "description": "Prayer meetings, Bible studies, and youth programs throughout the week",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=500&fit=crop",
+      "cta": "View Schedule"
+    }
+  ]
+}

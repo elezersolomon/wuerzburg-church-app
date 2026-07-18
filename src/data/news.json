@@ -1,0 +1,52 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "Annual Celebration of St. Mark",
+      "date": "2026-04-25",
+      "category": "Events",
+      "content": "Join us for the annual celebration of St. Mark, our patron saint. We will have special liturgy, music, and a community gathering.",
+      "image": "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?w=400&h=250&fit=crop"
+    },
+    {
+      "id": 2,
+      "title": "Community Outreach Program",
+      "date": "2026-03-15",
+      "category": "Community",
+      "content": "Our church has launched a new community outreach program to support families in need. We invite volunteers to join us in this noble mission.",
+      "image": "https://images.unsplash.com/photo-1516562141207-8988a262b9f7?w=400&h=250&fit=crop"
+    },
+    {
+      "id": 3,
+      "title": "Youth Group Meeting",
+      "date": "2026-03-10",
+      "category": "Youth",
+      "content": "Our youth group will meet every Friday at 6:30 PM. We focus on spiritual growth, friendship, and service. Everyone is welcome!",
+      "image": "https://images.unsplash.com/photo-1516214104703-3ab28dba60ca?w=400&h=250&fit=crop"
+    },
+    {
+      "id": 4,
+      "title": "New Church Music Initiative",
+      "date": "2026-03-05",
+      "category": "Worship",
+      "content": "We are proud to announce a new initiative to preserve and teach traditional Ethiopian Orthodox church music. Choir practice begins next month.",
+      "image": "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=250&fit=crop"
+    },
+    {
+      "id": 5,
+      "title": "Easter Preparation Begins",
+      "date": "2026-02-28",
+      "category": "Events",
+      "content": "As we enter the fasting season, we will have special services and teachings to prepare our hearts for Easter. Join us for daily prayers at 7 AM.",
+      "image": "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?w=400&h=250&fit=crop"
+    },
+    {
+      "id": 6,
+      "title": "Community Dinner Tonight",
+      "date": "2026-02-20",
+      "category": "Events",
+      "content": "All are invited to our community dinner tonight at 6 PM in the fellowship hall. It's a great opportunity to connect with our church family.",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=250&fit=crop"
+    }
+  ]
+}

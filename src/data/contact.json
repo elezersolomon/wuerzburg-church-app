@@ -1,0 +1,21 @@
+{
+  "contact": {
+    "name": "St. Mark Ethiopian Orthodox Church",
+    "address": "Würzburg, Germany",
+    "latitude": 49.7913,
+    "longitude": 9.9534,
+    "phone": "+49 931 123 4567",
+    "email": "info@stmarkchurch.de",
+    "website": "www.stmarkchurch.de",
+    "hours": {
+      "sunday": "9:00 AM - 1:00 PM",
+      "wednesday": "7:00 PM - 9:00 PM",
+      "friday": "6:30 PM - 8:30 PM"
+    },
+    "social": {
+      "facebook": "https://facebook.com/stmarkchurch",
+      "twitter": "https://twitter.com/stmarkchurch",
+      "youtube": "https://youtube.com/stmarkchurch"
+    }
+  }
+}
