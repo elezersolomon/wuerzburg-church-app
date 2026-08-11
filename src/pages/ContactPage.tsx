@@ -14,10 +14,15 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { useLanguage } from "../context/LanguageContext";
 
 interface ContactInfo {
   name: string;
+  name_am?: string;
+  name_de?: string;
   address: string;
+  address_am?: string;
+  address_de?: string;
   latitude: number;
   longitude: number;
   phone: string;
@@ -36,6 +41,7 @@ interface ContactInfo {
 }
 
 const ContactPage: React.FC = () => {
+  const { language, t } = useLanguage();
   const [contact, setContact] = useState<ContactInfo | null>(null);
   const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
@@ -79,8 +85,10 @@ const ContactPage: React.FC = () => {
     setTimeout(() => setSubmitted(false), 5000);
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (!contact) return <div>Error loading contact information</div>;
+  if (loading) return <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>{t("loading")}</Box>;
+  if (!contact) return <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>{t("errorLoadingContact")}</Box>;
+
+  const activeAddress = language === "am" && contact.address_am ? contact.address_am : language === "de" && contact.address_de ? contact.address_de : contact.address;
 
   return (
     <Box>
@@ -110,7 +118,7 @@ const ContactPage: React.FC = () => {
           component="h1"
           sx={{ fontWeight: "bold", position: "relative", zIndex: 10 }}
         >
-          Contact Us
+          {t("contactUs")}
         </Typography>
       </Box>
 
@@ -118,7 +126,7 @@ const ContactPage: React.FC = () => {
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, md: 5 }}>
             <Typography variant="h5" sx={{ fontWeight: "bold", mb: 3 }}>
-              Get in Touch
+              {t("getInTouch")}
             </Typography>
 
             <Card sx={{ mb: 2, display: "flex", alignItems: "center", p: 2 }}>
@@ -127,9 +135,9 @@ const ContactPage: React.FC = () => {
               />
               <CardContent sx={{ flex: 1, p: 0 }}>
                 <Typography variant="subtitle2" sx={{ color: "#999" }}>
-                  Address
+                  {t("address")}
                 </Typography>
-                <Typography variant="body1">{contact.address}</Typography>
+                <Typography variant="body1">{activeAddress}</Typography>
               </CardContent>
             </Card>
 
@@ -137,7 +145,7 @@ const ContactPage: React.FC = () => {
               <PhoneIcon sx={{ mr: 2, color: "#1b4d3e", fontSize: "2rem" }} />
               <CardContent sx={{ flex: 1, p: 0 }}>
                 <Typography variant="subtitle2" sx={{ color: "#999" }}>
-                  Phone
+                  {t("phone")}
                 </Typography>
                 <Typography variant="body1">
                   <a
@@ -154,7 +162,7 @@ const ContactPage: React.FC = () => {
               <EmailIcon sx={{ mr: 2, color: "#1b4d3e", fontSize: "2rem" }} />
               <CardContent sx={{ flex: 1, p: 0 }}>
                 <Typography variant="subtitle2" sx={{ color: "#999" }}>
-                  Email
+                  {t("email")}
                 </Typography>
                 <Typography variant="body1">
                   <a
@@ -172,18 +180,18 @@ const ContactPage: React.FC = () => {
                 <Box sx={{ display: "flex", mb: 2 }}>
                   <AccessTimeIcon sx={{ mr: 1, color: "#1b4d3e" }} />
                   <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
-                    Service Times
+                    {t("serviceTimes")}
                   </Typography>
                 </Box>
                 <Box sx={{ ml: 3 }}>
                   <Typography variant="body2" sx={{ mb: 0.5 }}>
-                    <strong>Sunday:</strong> {contact.hours.sunday}
+                    <strong>{t("sunday")}:</strong> {contact.hours.sunday}
                   </Typography>
                   <Typography variant="body2" sx={{ mb: 0.5 }}>
-                    <strong>Wednesday:</strong> {contact.hours.wednesday}
+                    <strong>{t("wednesday")}:</strong> {contact.hours.wednesday}
                   </Typography>
                   <Typography variant="body2">
-                    <strong>Friday:</strong> {contact.hours.friday}
+                    <strong>{t("friday")}:</strong> {contact.hours.friday}
                   </Typography>
                 </Box>
               </CardContent>
@@ -204,19 +212,19 @@ const ContactPage: React.FC = () => {
 
             <Card sx={{ p: 3 }}>
               <Typography variant="h6" sx={{ fontWeight: "bold", mb: 2 }}>
-                Send us a Message
+                {t("sendUsAMessage")}
               </Typography>
 
               {submitted && (
                 <Alert severity="success" sx={{ mb: 2 }}>
-                  Thank you for your message! We will get back to you soon.
+                  {t("messageSuccess")}
                 </Alert>
               )}
 
               <Box component="form" onSubmit={handleSubmit}>
                 <TextField
                   fullWidth
-                  label="Your Name"
+                  label={t("yourName")}
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
@@ -226,7 +234,7 @@ const ContactPage: React.FC = () => {
 
                 <TextField
                   fullWidth
-                  label="Your Email"
+                  label={t("yourEmail")}
                   name="email"
                   type="email"
                   value={formData.email}
@@ -237,7 +245,7 @@ const ContactPage: React.FC = () => {
 
                 <TextField
                   fullWidth
-                  label="Message"
+                  label={t("message")}
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
@@ -259,7 +267,7 @@ const ContactPage: React.FC = () => {
                   }}
                   fullWidth
                 >
-                  Send Message
+                  {t("sendMessage")}
                 </Button>
               </Box>
             </Card>

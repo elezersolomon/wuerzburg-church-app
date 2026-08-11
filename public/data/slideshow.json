@@ -3,30 +3,54 @@
     {
       "id": 1,
       "title": "Welcome to St. Mark Church",
-      "description": "A vibrant Ethiopian Orthodox community dedicated to worship, fellowship, and spiritual growth",
-      "image": "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=1200&h=500&fit=crop",
-      "cta": "Join Us Today"
+      "title_am": "ወደ ቅዱስ ማርቆስ ቤተክርስቲያን በደህና መጡ",
+      "title_de": "Willkommen in der St. Markus Kirche",
+      "description": "A place of worship, community, and spiritual growth",
+      "description_am": "የአምልኮ፣ የማህበረሰብ እና የመንፈሳዊ እድገት ስፍራ",
+      "description_de": "Ein Ort der Anbetung, Gemeinschaft und des geistlichen Wachstums",
+      "image": "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?w=1200&h=500&fit=crop",
+      "cta": "Join Us Today",
+      "cta_am": "ዛሬ ይቀላቀሉን",
+      "cta_de": "Treten Sie uns heute bei"
     },
     {
       "id": 2,
-      "title": "Sunday Worship Service",
-      "description": "Join us every Sunday at 10:00 AM for our main worship service. All are welcome.",
-      "image": "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?w=1200&h=500&fit=crop",
-      "cta": "Learn More"
+      "title": "Sunday Worship",
+      "title_am": "የእሁድ አምልኮ",
+      "title_de": "Sonntagsgottesdienst",
+      "description": "Every Sunday at 10:00 AM - All are welcome",
+      "description_am": "በየእሁዱ ጠዋት 10:00 ሰዓት - ሁሉም እንኳን ደህና መጡ",
+      "description_de": "Jeden Sonntag um 10:00 Uhr - Alle sind willkommen",
+      "image": "https://images.unsplash.com/photo-1516562141207-8988a262b9f7?w=1200&h=500&fit=crop",
+      "cta": "Learn More",
+      "cta_am": "የበለጠ ለመረዳት",
+      "cta_de": "Mehr erfahren"
     },
     {
       "id": 3,
-      "title": "Community Fellowship",
-      "description": "We gather together as a family to support one another in faith and love",
-      "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=500&fit=crop",
-      "cta": "Get Involved"
+      "title": "Community Service",
+      "title_am": "የማህበረሰብ አገልግሎት",
+      "title_de": "Gemeinschaftsdienst",
+      "description": "Serving Würzburg with compassion and faith",
+      "description_am": "ዉርዝቡርግን በምህረት እና በእምነት ማገልገል",
+      "description_de": "Würzburg mit Mitgefühl und Glauben dienen",
+      "image": "https://images.unsplash.com/photo-1516214104703-3ab28dba60ca?w=1200&h=500&fit=crop",
+      "cta": "Get Involved",
+      "cta_am": "ይሳተፉ",
+      "cta_de": "Mitmachen"
     },
     {
       "id": 4,
-      "title": "Spiritual Growth Programs",
-      "description": "Prayer meetings, Bible studies, and youth programs throughout the week",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=500&fit=crop",
-      "cta": "View Schedule"
+      "title": "Upcoming Events",
+      "title_am": "መጪ ክስተቶች",
+      "title_de": "Bevorstehende Veranstaltungen",
+      "description": "Check our calendar for all events and gatherings",
+      "description_am": "ለሁሉም ዝግጅቶች እና ስብሰባዎች የቀን መቁጠሪያችንን ይመልከቱ",
+      "description_de": "Überprüfen Sie unseren Kalender für alle Veranstaltungen und Treffen",
+      "image": "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?w=1200&h=500&fit=crop",
+      "cta": "View Events",
+      "cta_am": "ክስተቶችን ይመልከቱ",
+      "cta_de": "Veranstaltungen ansehen"
     }
   ]
 }

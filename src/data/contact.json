@@ -1,7 +1,11 @@
 {
   "contact": {
     "name": "St. Mark Ethiopian Orthodox Church",
+    "name_am": "የቅዱስ ማርቆስ የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን",
+    "name_de": "Äthiopisch-Orthodoxe St. Markus Kirche",
     "address": "Würzburg, Germany",
+    "address_am": "ዉርዝቡርግ፣ ጀርመን",
+    "address_de": "Würzburg, Deutschland",
     "latitude": 49.7913,
     "longitude": 9.9534,
     "phone": "+49 931 123 4567",

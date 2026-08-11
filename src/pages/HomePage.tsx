@@ -9,13 +9,20 @@ import {
   Typography,
 } from "@mui/material";
 import Slideshow from "../components/Slideshow";
+import { useLanguage } from "../context/LanguageContext";
 
 interface Slide {
   id: number;
   title: string;
+  title_am?: string;
+  title_de?: string;
   description: string;
+  description_am?: string;
+  description_de?: string;
   image: string;
   cta: string;
+  cta_am?: string;
+  cta_de?: string;
 }
 
 interface HomePageData {
@@ -23,6 +30,7 @@ interface HomePageData {
 }
 
 const HomePage: React.FC = () => {
+  const { language, t } = useLanguage();
   const [slides, setSlides] = useState<Slide[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -42,11 +50,18 @@ const HomePage: React.FC = () => {
     loadSlides();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>{t("loading")}</Box>;
+
+  const localizedSlides = slides.map((slide) => ({
+    ...slide,
+    title: language === "am" && slide.title_am ? slide.title_am : language === "de" && slide.title_de ? slide.title_de : slide.title,
+    description: language === "am" && slide.description_am ? slide.description_am : language === "de" && slide.description_de ? slide.description_de : slide.description,
+    cta: language === "am" && slide.cta_am ? slide.cta_am : language === "de" && slide.cta_de ? slide.cta_de : slide.cta,
+  }));
 
   return (
     <Box>
-      {slides.length > 0 && <Slideshow slides={slides} />}
+      {slides.length > 0 && <Slideshow slides={localizedSlides} />}
 
       <Container maxWidth="lg" sx={{ py: 6 }}>
         <Box sx={{ textAlign: "center", mb: 4 }}>
@@ -55,15 +70,13 @@ const HomePage: React.FC = () => {
             component="h2"
             sx={{ fontWeight: "bold", mb: 2 }}
           >
-            Welcome to St. Mark Church
+            {t("welcomeTitle")}
           </Typography>
           <Typography
             variant="body1"
             sx={{ color: "#666", fontSize: "1.1rem" }}
           >
-            A vibrant Ethiopian Orthodox community dedicated to worship,
-            fellowship, and service. We gather together in faith and extend
-            compassion to our neighbors.
+            {t("welcomeIntro")}
           </Typography>
         </Box>
       </Container>
@@ -75,46 +88,41 @@ const HomePage: React.FC = () => {
             component="h2"
             sx={{ fontWeight: "bold", mb: 2 }}
           >
-            Our Services
+            {t("ourServices")}
           </Typography>
           <Typography
             variant="body1"
             sx={{ color: "#666", maxWidth: "600px", mx: "auto" }}
           >
-            We offer a variety of programs and services to support your
-            spiritual journey and connect with our community.
+            {t("servicesIntro")}
           </Typography>
         </Box>
         <Grid container spacing={3}>
           {[
             {
-              title: "Sunday Worship",
-              description:
-                "Join us every Sunday at 10:00 AM for our main service. All are welcome.",
+              title: t("sundayWorshipTitle"),
+              description: t("sundayWorshipDesc"),
               color: "#1b4d3e",
               bgColor: "#E8F5E9",
               icon: "✝",
             },
             {
-              title: "Prayer Services",
-              description:
-                "Midweek prayer meetings and spiritual discussions. Wednesday evenings at 7:00 PM.",
+              title: t("prayerServicesTitle"),
+              description: t("prayerServicesDesc"),
               color: "#0f2d1f",
               bgColor: "#F3E5F5",
               icon: "🙏",
             },
             {
-              title: "Youth Programs",
-              description:
-                "Programs for young people to grow in faith and community. Friday at 6:30 PM.",
+              title: t("youthProgramsTitle"),
+              description: t("youthProgramsDesc"),
               color: "#1b4d3e",
               bgColor: "#E3F2FD",
               icon: "👥",
             },
             {
-              title: "Community Service",
-              description:
-                "We serve the community through various outreach and charitable initiatives.",
+              title: t("communityServiceTitle"),
+              description: t("communityServiceDesc"),
               color: "#0f2d1f",
               bgColor: "#FFF3E0",
               icon: "❤",
@@ -175,7 +183,7 @@ const HomePage: React.FC = () => {
           component="h2"
           sx={{ fontWeight: "bold", mb: 4 }}
         >
-          About Our Community
+          {t("aboutOurCommunity")}
         </Typography>
         <Grid container spacing={3}>
           <Grid size={{ xs: 12, md: 6 }}>
@@ -188,12 +196,10 @@ const HomePage: React.FC = () => {
               />
               <CardContent>
                 <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
-                  Our Faith
+                  {t("ourFaithTitle")}
                 </Typography>
                 <Typography variant="body2">
-                  We are part of the Ethiopian Orthodox Tewahedo Church, one of
-                  the oldest Christian traditions, with roots dating back to the
-                  apostolic age.
+                  {t("ourFaithBody")}
                 </Typography>
               </CardContent>
             </Card>
@@ -208,12 +214,10 @@ const HomePage: React.FC = () => {
               />
               <CardContent>
                 <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
-                  Our Community
+                  {t("ourCommunityTitle")}
                 </Typography>
                 <Typography variant="body2">
-                  St. Mark Church in Wuerzburg is a thriving multicultural
-                  community that welcomes all people regardless of their
-                  background.
+                  {t("ourCommunityBody")}
                 </Typography>
               </CardContent>
             </Card>

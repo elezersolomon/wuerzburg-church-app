@@ -3,49 +3,67 @@
     {
       "id": 1,
       "title": "Annual Celebration of St. Mark",
+      "title_am": "የቅዱስ ማርቆስ አመታዊ በዓል",
+      "title_de": "Jährliche Feier des Hl. Markus",
       "date": "2026-04-25",
       "category": "Events",
       "content": "Join us for the annual celebration of St. Mark, our patron saint. We will have special liturgy, music, and a community gathering.",
+      "content_am": "የመጠበቂያ ቅዱሳችንን የቅዱስ ማርቆስን ዓመታዊ በዓል ለማክበር አብረውን ይሁኑ። ልዩ ቅዳሴ፣ መዝሙር እና የማህበረሰብ መሰብሰቢያ ይኖረናል።",
       "image": "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?w=400&h=250&fit=crop"
     },
     {
       "id": 2,
       "title": "Community Outreach Program",
+      "title_am": "የማህበረሰብ ተደራሽነት ፕሮግራም",
+      "title_de": "Gemeindehilfsprogramm",
       "date": "2026-03-15",
       "category": "Community",
       "content": "Our church has launched a new community outreach program to support families in need. We invite volunteers to join us in this noble mission.",
+      "content_am": "ቤተክርስቲያናችን ችግር ላጋጠማቸው ቤተሰቦች ድጋፍ የሚሰጥ አዲስ የማህበረሰብ ተደራሽነት ፕሮግራም ጀምሯል። በዚሁ ቅዱስ ተልዕኮ ላይ በበጎ ፈቃደኝነት እንዲሳተፉ እንጋብዛለን።",
       "image": "https://images.unsplash.com/photo-1516562141207-8988a262b9f7?w=400&h=250&fit=crop"
     },
     {
       "id": 3,
       "title": "Youth Group Meeting",
+      "title_am": "የወጣቶች ቡድን ስብሰባ",
+      "title_de": "Treffen der Jugendgruppe",
       "date": "2026-03-10",
       "category": "Youth",
       "content": "Our youth group will meet every Friday at 6:30 PM. We focus on spiritual growth, friendship, and service. Everyone is welcome!",
+      "content_am": "የወጣቶች ቡድናችን በየሳምንቱ አርብ ከምሽቱ 12:30 ሰዓት ላይ ይገናኛል። ትኩረታችን በመንፈሳዊ እድገት፣ በወዳጅነት እና በአገልግሎት ላይ ነው። ሁሉም ሰው እንኳን ደህና መጣ!",
       "image": "https://images.unsplash.com/photo-1516214104703-3ab28dba60ca?w=400&h=250&fit=crop"
     },
     {
       "id": 4,
       "title": "New Church Music Initiative",
+      "title_am": "አዲስ የቤተክርስቲያን ዜማ ማስተማሪያ መርሃ ግብር",
+      "title_de": "Neue Initiative für Kirchenmusik",
       "date": "2026-03-05",
       "category": "Worship",
       "content": "We are proud to announce a new initiative to preserve and teach traditional Ethiopian Orthodox church music. Choir practice begins next month.",
+      "content_am": "የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን ባህላዊ ዜማዎችን ለመጠበቅ እና ለማስተማር የተጀመረውን አዲስ መርሃ ግብር በኩራት እናበስራለን። የኮ choir ልምምድ በሚቀጥለው ወር ይጀምራል።",
       "image": "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=250&fit=crop"
     },
     {
       "id": 5,
       "title": "Easter Preparation Begins",
+      "title_am": "የትንሳኤ በዓል ዝግጅት መጀመር",
+      "title_de": "Ostervorbereitung beginnt",
       "date": "2026-02-28",
       "category": "Events",
       "content": "As we enter the fasting season, we will have special services and teachings to prepare our hearts for Easter. Join us for daily prayers at 7 AM.",
+      "content_am": "ወደ ጾም ወቅት ስንገባ፣ ልባችንን ለትንሳኤ በዓል ለማዘጋጀት ልዩ አገልግሎቶች እና ትምህርቶች ይኖሩናል። በየቀኑ ጠዋት 1:00 ሰዓት ላይ ለሚካሄደው ጸሎት ይቀላቀሉን።",
       "image": "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?w=400&h=250&fit=crop"
     },
     {
       "id": 6,
       "title": "Community Dinner Tonight",
+      "title_am": "የማህበረሰብ እራት ዛሬ ምሽት",
+      "title_de": "Gemeinschaftsabendessen heute Abend",
       "date": "2026-02-20",
       "category": "Events",
       "content": "All are invited to our community dinner tonight at 6 PM in the fellowship hall. It's a great opportunity to connect with our church family.",
+      "content_am": "ዛሬ ምሽት 12:00 ሰዓት ላይ በአዳራሻችን ለሚካሄደው የማህበረሰብ እራት ሁሉም ተጋብዘዋል። ከቤተክርስቲያናችን ቤተሰቦች ጋር ለመገናኘት ግሩም አጋጣሚ ነው።",
       "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=250&fit=crop"
     }
   ]

@@ -9,13 +9,16 @@ import {
 import HomePage from "./pages/HomePage";
 import NewsPage from "./pages/NewsPage";
 import ContactPage from "./pages/ContactPage";
+import { LanguageProvider, useLanguage } from "./context/LanguageContext";
 import "./App.css";
 
-function App() {
+function AppContent() {
+  const { language, setLanguage, t } = useLanguage();
+
   const navigationItems = [
-    { label: "Home", path: "/" },
-    { label: "News", path: "/news" },
-    { label: "Contact", path: "/contact" },
+    { label: t("home"), path: "/" },
+    { label: t("news"), path: "/news" },
+    { label: t("contact"), path: "/contact" },
   ];
 
   return (
@@ -35,13 +38,55 @@ function App() {
             <Box
               sx={{
                 display: "flex",
+                justifyContent: "space-between",
                 alignItems: "center",
-                gap: 1,
+                width: "100%",
               }}
             >
-              <Box sx={{ fontSize: "1.5rem" }}>✝️</Box>
-              <Box sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>
-                St. Mark Church
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                }}
+              >
+                <Box sx={{ fontSize: "1.5rem" }}>✝️</Box>
+                <Box sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>
+                  {t("churchName")}
+                </Box>
+              </Box>
+
+              {/* Language Selector */}
+              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                {[
+                  { code: "en", label: "EN" },
+                  { code: "am", label: "አማ" },
+                  { code: "de", label: "DE" },
+                ].map((lang, index) => (
+                  <span key={lang.code} style={{ display: "inline-flex", alignItems: "center" }}>
+                    <button
+                      onClick={() => setLanguage(lang.code as "en" | "am" | "de")}
+                      style={{
+                        background: "none",
+                        border: "none",
+                        color: language === lang.code ? "#4db6ac" : "white",
+                        fontWeight: language === lang.code ? "bold" : "normal",
+                        cursor: "pointer",
+                        fontSize: "0.9rem",
+                        padding: "4px 8px",
+                        borderRadius: "4px",
+                        transition: "all 0.2s ease-in-out",
+                      }}
+                    >
+                      {lang.label}
+                    </button>
+                    {index < 2 && (
+                      <Box component="span" sx={{ color: "rgba(255,255,255,0.3)", fontSize: "0.8rem", mx: 0.5 }}>
+                        |
+                      </Box>
+                    )}
+                  </span>
+                ))}
               </Box>
             </Box>
 
@@ -89,12 +134,20 @@ function App() {
           }}
         >
           <Container>
-            <p>&copy; 2026 St. Mark Church Würzburg. All rights reserved.</p>
-            <p>Everyone is welcome. 📍 Würzburg, Germany</p>
+            <p>{t("copyright")}</p>
+            <p>{t("footerWelcome")}</p>
           </Container>
         </Box>
       </Box>
     </Router>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 
