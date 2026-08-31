@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage";
 import NewsPage from "./pages/NewsPage";
 import ContactPage from "./pages/ContactPage";
 import { LanguageProvider, useLanguage } from "./context/LanguageContext";
+import churchLogo from "./assets/logo.png";
 import "./App.css";
 
 function AppContent() {
@@ -50,7 +51,18 @@ function AppContent() {
                   gap: 1,
                 }}
               >
-                <Box sx={{ fontSize: "1.5rem" }}>✝️</Box>
+                <Box
+                  component="img"
+                  src={churchLogo}
+                  alt={t("churchName")}
+                  sx={{
+                    width: 44,
+                    height: 44,
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                    boxShadow: "0 1px 4px rgba(0,0,0,0.3)",
+                  }}
+                />
                 <Box sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>
                   {t("churchName")}
                 </Box>
