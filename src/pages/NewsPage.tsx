@@ -36,7 +36,7 @@ const NewsPage: React.FC = () => {
   useEffect(() => {
     const loadNews = async () => {
       try {
-        const response = await fetch("/data/news.json");
+        const response = await fetch(`${import.meta.env.BASE_URL}data/news.json`);
         const data = await response.json();
         setNews(data.news);
         setFilteredNews(data.news);

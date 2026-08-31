@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const loadSlides = async () => {
       try {
-        const response = await fetch("/data/slideshow.json");
+        const response = await fetch(`${import.meta.env.BASE_URL}data/slideshow.json`);
         const data: HomePageData = await response.json();
         setSlides(data.slides);
       } catch (error) {

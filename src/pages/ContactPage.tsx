@@ -54,7 +54,7 @@ const ContactPage: React.FC = () => {
   useEffect(() => {
     const loadContact = async () => {
       try {
-        const response = await fetch("/data/contact.json");
+        const response = await fetch(`${import.meta.env.BASE_URL}data/contact.json`);
         const data = await response.json();
         setContact(data.contact);
       } catch (error) {

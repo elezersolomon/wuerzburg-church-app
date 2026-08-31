@@ -12,27 +12,32 @@ npm run build    # production build (outputs to dist/)
 npm run lint     # eslint
 ```
 
-## Deployment (Render, free plan)
+## Deployment (GitHub Pages)
 
-The repo contains a [`render.yaml`](./render.yaml) Blueprint that deploys this
-app as a **Static Site** on Render's free plan ($0/month, no credit card needed).
+The repo is published to GitHub Pages via the
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) workflow and is
+live at **https://elezersolomon.github.io/wuerzburg-church-app/**
 
-To deploy:
+Every push to `master` automatically:
 
-1. Push the repo to GitHub (branch `master`).
-2. Go to [render.com](https://render.com) → **New +** → **Blueprint**.
-3. Connect GitHub and select the `elezersolomon/wuerzburg-church-app` repo.
-4. Render reads `render.yaml`, provisions a static site, and deploys it.
-5. Your site is live at `https://wuerzburg-church-app.onrender.com`.
+1. Installs dependencies (`npm ci`) with Node 22.
+2. Builds the site with `vite build --base=/wuerzburg-church-app/`.
+3. Uploads `dist/` as a Pages artifact and deploys it.
 
 Config notes:
 
-- **Build command**: `npm ci && npm run build` — outputs to `dist/`.
-- **Publish directory**: `./dist`.
-- **Spa rewrites**: all routes fall back to `/index.html` so client-side
-  routes (`/news`, `/contact`) work on deep links/refresh.
-- **Node version**: pinned via `.nvmrc` (`22`) and `engines` in `package.json`.
-- **Environment variables**: none required — the app is fully static; all
-  content is fetched from `/data/*.json` in `public/`. If you later add
-  env vars, list them under `envVars` in `render.yaml` or set them in the
-  Render dashboard (Dashboard → your static site → Environment).
+- **Base path**: all asset and data URLs are prefixed with
+  `/wuerzburg-church-app/` (via the `--base` flag, mirrored in code through
+  `import.meta.env.BASE_URL`).
+- **Routing**: the app uses `HashRouter` (`#/news`, `#/contact`), which works on
+  GitHub Pages without server-side rewrites (pages don't support SPA fallbacks).
+- **Environment variables**: none required — the app is fully static; content
+  is fetched from `/data/*.json` in `public/`. Add any future `VITE_*` vars to
+  the workflow's `env:` block and the build.
+
+### Optional: Render (free Blueprint)
+
+The repo also includes a [`render.yaml`](./render.yaml) Blueprint if you ever
+want to host on [Render](https://render.com) instead or in addition
+(Static Site, free plan): Render dashboard → **New +** → **Blueprint** →
+select this repo.

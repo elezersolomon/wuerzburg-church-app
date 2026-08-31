@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -93,9 +93,9 @@ function AppContent() {
             {/* Navigation Menu */}
             <Box sx={{ display: "flex", gap: { xs: 2.5, sm: 3.5 } }}>
               {navigationItems.map((item) => (
-                <a
+                <Link
                   key={item.path}
-                  href={item.path}
+                  to={item.path}
                   style={{
                     color: "white",
                     textDecoration: "none",
@@ -107,7 +107,7 @@ function AppContent() {
                   onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </Box>
           </Toolbar>
