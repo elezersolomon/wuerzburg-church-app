@@ -224,6 +224,44 @@ const HomePage: React.FC = () => {
           </Grid>
         </Grid>
       </Container>
+
+      <Container maxWidth="lg" sx={{ py: 6 }}>
+        <Box sx={{ textAlign: "center", mb: 4 }}>
+          <Typography
+            variant="h4"
+            component="h2"
+            sx={{ fontWeight: "bold", mb: 2 }}
+          >
+            {t("watchOurVideo")}
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            aspectRatio: "16 / 9",
+            overflow: "hidden",
+            borderRadius: 2,
+            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+          }}
+        >
+          <iframe
+            src="https://www.youtube.com/embed/DN6hlp9YGHc"
+            title={t("watchOurVideo")}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              border: 0,
+            }}
+          />
+        </Box>
+      </Container>
     </Box>
   );
 };

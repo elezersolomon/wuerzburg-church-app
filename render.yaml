@@ -1,0 +1,20 @@
+# Render Blueprint configuration for wuerzburg-church-app
+# Deploy as a Static Site on the Free plan ($0/month, 100 GB bandwidth).
+# Connect: Render dashboard -> New + -> Blueprint -> select this repo.
+services:
+  - type: web
+    name: wuerzburg-church-app
+    runtime: static
+    repo: https://github.com/elezersolomon/wuerzburg-church-app
+    branch: master
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    autoDeploy: true
+    pullRequestPreviewsEnabled: false
+    envVars: []
+    routes:
+      # SPA fallback: react-router uses BrowserRouter, so every client-side
+      # route (/news, /contact, ...) must serve index.html or deep links 404.
+      - type: rewrite
+        source: /*
+        destination: /index.html
