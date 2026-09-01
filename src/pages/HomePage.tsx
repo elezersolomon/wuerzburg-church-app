@@ -11,6 +11,19 @@ import {
 import Slideshow from "../components/Slideshow";
 import { useLanguage } from "../context/LanguageContext";
 
+// Local slideshow images (in src/assets/slide_show). Importing them through Vite
+// lets Vite hash them and emit them with the correct BASE_URL prefix (important
+// for GitHub Pages, where the site lives under /wuerzburg-church-app/).
+const slideImageModules = import.meta.glob("../assets/slide_show/*.jpg", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+
+const slideImages = Object.keys(slideImageModules)
+  .sort()
+  .map((key) => slideImageModules[key]);
+
 interface Slide {
   id: number;
   title: string;
@@ -39,7 +52,13 @@ const HomePage: React.FC = () => {
       try {
         const response = await fetch(`${import.meta.env.BASE_URL}data/slideshow.json`);
         const data: HomePageData = await response.json();
-        setSlides(data.slides);
+        // Use the local images (falling back to the JSON values if a local image
+        // is ever missing). Slide order matches the sorted slide-1..N filenames.
+        const slidesWithImages = data.slides.map((slide, index) => ({
+          ...slide,
+          image: slideImages[index] || slide.image,
+        }));
+        setSlides(slidesWithImages);
       } catch (error) {
         console.error("Error loading slideshow data:", error);
       } finally {
