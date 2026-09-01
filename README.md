@@ -35,6 +35,19 @@ Config notes:
   is fetched from `/data/*.json` in `public/`. Add any future `VITE_*` vars to
   the workflow's `env:` block and the build.
 
+### Contact form
+
+The "Send us a Message" form submits to **Formspree** (free plan, 50
+submissions/month) so messages land in your inbox.
+
+To configure:
+
+1. Create a form at [formspree.io](https://formspree.io) and enter the email
+   address that should receive submissions.
+2. In `src/pages/ContactPage.tsx`, replace the `YOUR_FORM_ID` in
+   `FORMSPREE_ENDPOINT` with your form's ID (e.g. `https://formspree.io/f/abcxyz`).
+3. Commit, push, and deploy (auto-triggered).
+
 ### Optional: Render (free Blueprint)
 
 The repo also includes a [`render.yaml`](./render.yaml) Blueprint if you ever

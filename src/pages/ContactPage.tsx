@@ -9,6 +9,7 @@ import {
   TextField,
   Button,
   Alert,
+  CircularProgress,
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -40,6 +41,9 @@ interface ContactInfo {
   };
 }
 
+// Formspree endpoint for the "Send us a Message" form.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/moeqejab";
+
 const ContactPage: React.FC = () => {
   const { language, t } = useLanguage();
   const [contact, setContact] = useState<ContactInfo | null>(null);
@@ -50,6 +54,8 @@ const ContactPage: React.FC = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   useEffect(() => {
     const loadContact = async () => {
@@ -77,12 +83,42 @@ const ContactPage: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setSubmitted(false), 5000);
+    setSubmitting(true);
+    setSubmitError(false);
+    setSubmitted(false);
+
+    try {
+      const data = new URLSearchParams();
+      data.append("name", formData.name);
+      data.append("email", formData.email);
+      data.append("message", formData.message);
+      data.append("_subject", `Website contact message from ${formData.name}`);
+      data.append("_replyto", formData.email);
+
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: data,
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setSubmitError(true);
+      }
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (loading) return <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>{t("loading")}</Box>;
@@ -221,6 +257,12 @@ const ContactPage: React.FC = () => {
                 </Alert>
               )}
 
+              {submitError && (
+                <Alert severity="error" sx={{ mb: 2 }}>
+                  {t("messageError")}
+                </Alert>
+              )}
+
               <Box component="form" onSubmit={handleSubmit}>
                 <TextField
                   fullWidth
@@ -258,6 +300,8 @@ const ContactPage: React.FC = () => {
                 <Button
                   type="submit"
                   variant="contained"
+                  disabled={submitting}
+                  startIcon={submitting ? <CircularProgress size={18} color="inherit" /> : undefined}
                   sx={{
                     mt: 2,
                     background: "#1b4d3e",
@@ -267,7 +311,7 @@ const ContactPage: React.FC = () => {
                   }}
                   fullWidth
                 >
-                  {t("sendMessage")}
+                  {submitting ? t("sending") : t("sendMessage")}
                 </Button>
               </Box>
             </Card>
