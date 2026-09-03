@@ -68,7 +68,7 @@ const translations: Record<Language, Record<string, string>> = {
     churchName: "ቅዱስ ማርቆስ ቤተክርስቲያን",
     home: "ዋና ገጽ",
     news: "ዜና",
-    contact: "እውቂያ",
+    contact: "ያግኙን",
     welcomeTitle: "ወደ ቅዱስ ማርቆስ ቤተክርስቲያን በደህና መጡ",
     welcomeIntro: "ለአምልኮ፣ ለኅብረት እና ለአገልግሎት የተሰጠ ንቁ የኢትዮጵያ ኦርቶዶክስ ማህበረሰብ። በእምነት እንሰበሰባለን እንዲሁም ለጎረቤቶቻችን ርህራሄን እንዘረጋለን።",
     ourServices: "አገልግሎቶቻችን",

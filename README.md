@@ -54,3 +54,19 @@ The repo also includes a [`render.yaml`](./render.yaml) Blueprint if you ever
 want to host on [Render](https://render.com) instead or in addition
 (Static Site, free plan): Render dashboard → **New +** → **Blueprint** →
 select this repo.
+
+## Built with AI assistance
+
+This project was developed with the aid of AI pair-programming tools:
+
+- **[Cline](https://github.com/cline/cline)** — an AI coding agent running inside
+  the IDE, used to write, refactor, and validate code (including this website's
+  pages, state management, styles, deployment pipeline, and the automated
+  GitHub Pages setup) via natural-language instructions.
+- **DeepSeek** — the large-language model that powered the AI agent, handling
+  tasks like generating React/TypeScript/MUI components, debugging build issues,
+  configuring the GitHub Actions workflow, and the Formspree integration.
+
+The human (repo owner) directed the work, reviewed changes, and controlled
+what gets committed and deployed — the AI handled the heavy lifting of
+implementation, troubleshooting, and iteration.
